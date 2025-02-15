@@ -2,4 +2,161 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.userlogin {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+.userlogin .login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.userlogin .enter-btn .entered {
+  border: none;
+  background-color: #58d68d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+
+.admin-inform {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.admin-inform .admin-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sign-box {
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.sign-box .sign-btn {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sign-box .sign-btn .signup {
+  border: none;
+  padding: 10px 15px;
+  background-color: #58d68d;
+  font-size: 18px;
+  color: white;
+  border-radius: 20px;
+}
+
+.delete-box {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.delete-box .locale {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.delete-box .locale input {
+  width: 100px;
+  height: 40px;
+}
+.delete-box .locale .check {
+  border: none;
+  background-color: #d3a90f;
+  font-size: 18px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  color: white;
+}
+.delete-box .delete-area button {
+  border: none;
+  background-color: #58d68d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.Uptade-area {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Uptade-area .button-input {
+  display: flex;
+  gap: 10px;
+}
+.Uptade-area .button-input button {
+  border: none;
+  background-color: #e8730c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.uptade-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.uptade-box .uptade-btn {
+  margin-top: 5px;
+}
+.uptade-box .uptade-btn button {
+  border: none;
+  background-color: #0ce873;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.special-messege {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.vicible {
+  visibility: visible;
+  color: red;
+}
+
+.green {
+  visibility: visible;
+  color: green;
 }/*# sourceMappingURL=App.css.map */

@@ -5,3 +5,169 @@
 }
 
 
+.userlogin{
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+
+
+  .login-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .enter-btn{
+    .entered{
+      border: none;
+      background-color: #58d68d;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 15px;
+    }
+  }
+  
+
+}
+
+
+
+
+.admin-inform{
+  width: fit-content;
+  margin: 0 auto;
+
+  .admin-list{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+.sign-box{
+  width: 400px;
+  height: fit-content;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  .sign-btn{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .signup{
+      border: none;
+      padding: 10px 15px;
+      background-color: #58d68d;
+      font-size: 18px;
+      color: white;
+      border-radius: 20px;
+    }
+  }
+}
+
+.delete-box{
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  .locale{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    input{
+      width: 100px;
+      height: 40px;
+    }
+    .check{
+      border: none;
+      background-color: #d3a90f;
+      font-size: 18px;
+      padding: 5px 15px;
+      border-radius: 15px;
+      color: white;
+    }
+  
+  }
+  .delete-area{
+    button{
+      border: none;
+      background-color: #58d68d;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+  }
+}
+
+.Uptade-area{
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .button-input{
+    display: flex;
+    gap: 10px;
+    button{
+      border: none;
+      background-color: #e8730c;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+  }
+  
+}
+
+.uptade-box{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .uptade-btn{
+    margin-top: 5px;
+    button{
+      border: none;
+      background-color: #0ce873;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+  }
+}
+.special-messege{
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+
+.vicible{
+  visibility: visible;
+  color: red;
+}
+
+.green{
+  visibility: visible;
+  color: green;
+}

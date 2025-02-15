@@ -1,33 +1,26 @@
 import React, { useEffect, useState } from "react";
-import axios from './../../node_modules/axios/lib/axios';
+import { serveralClient } from './Service';
 
 
 
 
-export function TakeData(){
-    const [Data, setData] = useState(null);
-    
-  useEffect(()=>{
-    const fechdata=async()=>{
-    try{
-    const respons=await axios.get('https://678ed693a64c82aeb12183e7.mockapi.io/students');
+
+export function UserList(){
+ const [Data, setData] = useState(null);
+ useEffect(()=>{
+    fetch();
+   },[]);
+   const fetch = async()=>{
+    const respons= await serveralClient.get();
     setData(respons.data);   
     }
-    catch(error){
-     console.error('data yuklenmedi',error)
-    }
-    }
-
-   fechdata();
-   
-  },[]);
-  console.log(Data);
+   console.log(Data);
     return(
         <>
-        <table className="table">
+        <table className="table table-dark table-striped">
         <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">id</th>
       <th scope="col">Name</th>
       <th scope="col">Surname</th>
       <th scope="col">age</th>
