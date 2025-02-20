@@ -8,10 +8,17 @@ import { Sign } from './Usersign';
 import { UserList } from './Userlist';
 import { DeleteUser } from './Delete';
 import { UptadeStudent } from './Uptade';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+
+
+const queryClient = new QueryClient();
 
 function App() {
+  
   return (
   <>
+<QueryClientProvider client={queryClient}>
 <BrowserRouter>
 <Routes>
 <Route path='/' element={<HomePage/>}/>
@@ -23,6 +30,7 @@ function App() {
 </Route>
 </Routes>
 </BrowserRouter>
+</QueryClientProvider>
   </>
   );
 }

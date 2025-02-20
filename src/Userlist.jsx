@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { serveralClient } from './Service';
 
+import { serveralClient } from './Service';
+import { useQuery } from '@tanstack/react-query';
 
 
 
 
 export function UserList(){
- const [Data, setData] = useState(null);
- useEffect(()=>{
-    fetch();
-   },[]);
-   const fetch = async()=>{
-    const respons= await serveralClient.get();
-    setData(respons.data);   
-    }
-   console.log(Data);
+
+ const{data,isLoading,error}=useQuery({queryKey: ['users'],queryFn:() =>
+  serveralClient.get().then((response) => response.data),})
+  if (isLoading) return <div>Yüklənir...</div>;
+  console.log(error);
+ console.log(data);
+ 
+ console.log(Array.isArray(data));
+ 
     return(
         <>
         <table className="table table-dark table-striped">
@@ -28,7 +28,7 @@ export function UserList(){
     </tr>
   </thead>
   <tbody>
-  {Data&&Data.map(({name,id,surname,specialty,age})=>{
+  {data && data.map(({name,id,surname,specialty,age})=>{
             return <tr key={id}>
                <th scope="row">{id}</th>
                <td>{name}</td>

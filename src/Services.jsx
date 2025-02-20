@@ -18,9 +18,9 @@ export function Services(){
             </div>
           </div>
          
+         
           
-          
-         <Outlet/>
+        <Outlet/>  
         </>
     )
 }

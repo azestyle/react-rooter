@@ -1,47 +1,43 @@
 import React, { useRef } from "react";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { serveralClient } from "./Service";
-
+import { useMutation, useQueryClient,useQuery } from '@tanstack/react-query';
 
 
 export function DeleteUser(){
 const [UserId, setUserId] = useState("");
 const [Have, setHave] = useState("");
 const cases=useRef(null);
+const queryClient = useQueryClient();
 
-const fetch = async () => {
-    cases.current.textContent=''
-    try{
-        if(UserId>0){
-            const respons = await serveralClient.getById(UserId);
-            if(respons.data){
-                cases.current.style.color='green'
-                cases.current.textContent='Tələbə mövcuddur!'
-               setHave(UserId); } 
-        }else{
-            cases.current.style.color='red'
-            cases.current.textContent='Tələbə id-sini daxil edin!' 
-        }
-    }catch(error){
-        cases.current.style.color='red'
-        cases.current.textContent='Belə bir istifadəçi mövcud deyil!'
-        console.error('problem var',error.response.status);  
+
+const{data,error,refetch,isLoading}=useQuery({queryKey:['person',UserId],queryFn:()=>serveralClient.getById(UserId).then((response) => response.data), enabled: false,retry:false});
+console.log(data);
+if (cases.current) {
+    if (isLoading) {
+      cases.current.style.color = 'blue';
+      cases.current.textContent = 'Zəhmət olmasa gözləyin....';
+    } else if (data) {
+      cases.current.style.color = 'green';
+      cases.current.textContent = 'Tələbə mövcuddur!';
+     
+    } else if (error) {
+      cases.current.style.color = 'red';
+      cases.current.textContent = 'Belə bir istifadəçi mövcud deyil!';
     }
-    
-};
-    
-const Deleted=async()=>{
-if(Have){
-    const respons= await serveralClient.delete(Have);
-    setUserId('');
-    setHave('');
-    cases.current.style.color='green'
-    cases.current.textContent='Tələbə uğurla xaric edildi!'
-    console.log(respons);
-}
-    
+  }
+const fetch=()=>{
+    queryClient.removeQueries(["user", UserId]);
+    refetch();
+    console.log(Have);
     
 }
+  
+const mutation=use.Mutation((id)=>serveralClient.delete(id))
+const deleted=()=>{
+    mutation()
+}
+
 
 
     return(
@@ -56,7 +52,7 @@ if(Have){
             <p ref={cases} className="special-messege"></p>
           
              <div className="delete-area">
-                <button onClick={Deleted}>Xaric Et</button>
+                <button onClick={deleted}>Xaric Et</button>
              </div>
           
         </div>
